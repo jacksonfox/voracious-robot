@@ -1,6 +1,6 @@
 baseURL = 'http://localhost:1313/'
 languageCode = 'en-us'
-title = 'Upstanding Robot'
+title = 'Voracious Robot'
 
 enableRobotsTXT = true
 buildDrafts = false
