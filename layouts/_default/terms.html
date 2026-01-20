@@ -1,9 +1,9 @@
 {{ define "main" }}
 <h1>tags</h1>
 
-{{ range .Data.Terms.Alphabetical }}
+{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
 <div>
-    <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a> ({{ .Count }})
+    <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">#{{ $name }}</a> ({{ len $taxonomy }})
 </div>
 {{ end }}
 {{ end }}

@@ -7,7 +7,7 @@
     <meta name="description" content="{{ .Site.Params.description }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: Menlo, Monaco, "Courier New", monospace;
@@ -91,9 +91,9 @@
         }
         
         .site-title a {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Knewave', cursive;
             color: #333;
-            font-size: 24px;
+            font-size: 36px;
             font-weight: 400;
         }
         
@@ -147,19 +147,45 @@
             color: #666;
             margin-left: 8px;
         }
+        
+        figure {
+            margin: 20px 0;
+        }
+        
+        figure img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .rainbow-title {
+            animation: rainbow-cycle 12s ease-in-out infinite;
+        }
+        
+        @keyframes rainbow-cycle {
+            0% { color: #cc0000; }   /* red */
+            14% { color: #cc6600; }  /* orange */
+            28% { color: #b8860b; }  /* yellow */
+            42% { color: #228b22; }  /* green */
+            57% { color: #0066cc; }  /* blue */
+            71% { color: #4b0082; }  /* indigo */
+            85% { color: #663399; }  /* violet */
+            100% { color: #cc0000; } /* back to red */
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="site-header-image">
-            <img src="/voracious-robot.png" alt="Robot mascot">
+            <span style="font-size: 60px;">🤖</span>
         </div>
         <div class="site-title">
-            <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+            <a href="{{ .Site.BaseURL }}" class="rainbow-title">{{ .Site.Title }}</a>
         </div>
         <nav>
             <a href="/"{{ if .IsHome }} class="active"{{ end }}>home</a>
             <a href="/about/"{{ if eq .Type "about" }} class="active"{{ end }}>about</a>
+            <a href="/reading/"{{ if eq .Type "reading" }} class="active"{{ end }}>reading</a>
             <a href="/following/"{{ if eq .Type "following" }} class="active"{{ end }}>following</a>
             <a href="/tags/"{{ if eq .Section "tags" }} class="active"{{ end }}>tags</a>
         </nav>

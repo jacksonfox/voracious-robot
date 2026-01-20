@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ range (.Paginate (where .Site.RegularPages "Type" "posts")).Pages }}
+{{ range (.Paginate (where .Site.RegularPages "Section" "posts")).Pages }}
 <article class="post">
     <div class="post-date">
         <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }}</a>
