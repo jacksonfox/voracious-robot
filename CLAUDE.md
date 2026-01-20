@@ -21,8 +21,10 @@ This is a personal links blog built with Hugo, featuring a custom minimal design
 - **Links**: #0066cc blue for accessibility compliance
 
 ### Content Structure
+- Posts are individual `.md` files in `content/posts/` (not directories)
+- Images stored in `static/` and referenced as `/filename.jpg`
 - Posts have optional titles - if no title, just show date/content/tags
-- Date-based permalinks: `/:year/:month/:day/:slug/`  
+- Date-based permalinks: `/:year/:month/:day/:slug/`
 - Tags appear below post content with # prefix
 - Posts migrated from micro.blog format (originals in `to-migrate/`)
 
@@ -50,3 +52,4 @@ This is a personal links blog built with Hugo, featuring a custom minimal design
 - Maintain accessibility standards
 - Preserve clean typography hierarchy
 - Any changes should feel intentional and purposeful
+- Always update CLAUDE.md with relevant details when committing code to Github

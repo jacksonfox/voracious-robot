@@ -28,42 +28,43 @@ if ! echo "$URL" | grep -qE '^https?://'; then
     exit 1
 fi
 
-# Generate filename from URL or timestamp
-TIMESTAMP=$(date +"%Y%m%d%H%M%S")
+# Generate filename with YYYY-MM-DD-slug format
+DATE_PREFIX=$(date +"%Y-%m-%d")
 if [ -n "$TITLE" ]; then
     # Create slug from title
     SLUG=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
-    FILENAME="$SLUG"
+    FILENAME="${DATE_PREFIX}-${SLUG}"
 else
-    # Use timestamp as filename
-    FILENAME="link-$TIMESTAMP"
+    # Use date + "link" as filename
+    FILENAME="${DATE_PREFIX}-link"
 fi
 
-# Create the post
+# Create the post file path
 POST_PATH="content/posts/${FILENAME}.md"
 
 # Check if file already exists
 if [ -f "$POST_PATH" ]; then
+    SUFFIX=$(date +"%H%M%S")
     echo "Warning: $POST_PATH already exists. Using timestamp suffix."
-    POST_PATH="content/posts/${FILENAME}-${TIMESTAMP}.md"
+    POST_PATH="content/posts/${FILENAME}-${SUFFIX}.md"
 fi
 
-# Create post content
+# Create post content with YAML frontmatter
 cat > "$POST_PATH" << EOF
-+++
-date = '$(date -Iseconds)'
-draft = false
-tags = [""]
-link = "$URL"
+---
+date: $(date -Iseconds)
+draft: false
+tags: [""]
+link: "$URL"
 EOF
 
 # Add title if provided
 if [ -n "$TITLE" ]; then
-    echo "title = '$TITLE'" >> "$POST_PATH"
+    echo "title: \"$TITLE\"" >> "$POST_PATH"
 fi
 
 cat >> "$POST_PATH" << 'EOF'
-+++
+---
 
 Brief commentary about the link.
 
@@ -74,7 +75,7 @@ echo ""
 echo "Next steps:"
 echo "1. Edit $POST_PATH"
 echo "2. Add your commentary and tags"
-echo "3. Remove template links if not needed"
+echo "3. Add images to static/ and reference with /filename.jpg"
 echo "4. Run ./hugo server to preview"
 echo ""
 # Only try to open editor if running interactively (not from Automator)
