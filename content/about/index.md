@@ -6,6 +6,6 @@ layout: single
 type: about
 ---
 
-# About
+# About Me
 
-Designer, all around web geek. UX and design leader at Viget. Fond of breakfast burritos. Made this site to learn Claude Code and share interesting articles.
+I'm a designer and all around web geek. I'm fond of breakfast burritos, K-pop, and 90's mountain bikes.
