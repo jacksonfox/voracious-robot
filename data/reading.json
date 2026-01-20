@@ -1,0 +1,20 @@
+{
+  "books": [
+    {
+      "title": "Deep End",
+      "author": "Ali Hazelwood",
+      "dateRead": "2025-04-30",
+      "bookshopUrl": "",
+      "rating": null,
+      "notes": ""
+    },
+    {
+      "title": "Project Hail Mary",
+      "author": "Andy Weir",
+      "dateRead": "2025-08-13",
+      "bookshopUrl": "",
+      "rating": null,
+      "notes": ""
+    }
+  ]
+}

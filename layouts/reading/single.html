@@ -1,0 +1,23 @@
+{{ define "main" }}
+<p>{{ .Content }}</p>
+
+<div class="reading-list">
+{{ $reading := .Site.Data.reading }}
+{{ if $reading.books }}
+  <ul>
+    {{ range $reading.books }}
+    <li>
+      {{ if and .bookshopUrl (ne .bookshopUrl "") }}
+      <a href="{{ .bookshopUrl }}" target="_blank" rel="noopener">{{ .title }}</a>
+      {{ else }}
+      {{ .title }}
+      {{ end }}
+      by {{ .author }} <small>({{ dateFormat "January 2006" .dateRead }})</small>
+    </li>
+    {{ end }}
+  </ul>
+{{ else }}
+  <p>No books in the reading list yet.</p>
+{{ end }}
+</div>
+{{ end }}
