@@ -1,170 +1,160 @@
 {
-  "categories": [
+  "feeds": [
     {
-      "name": "Always",
-      "feeds": [
-        {
-          "title": "Bobulate",
-          "htmlUrl": "https://bobulate.com/",
-          "xmlUrl": "http://bobulate.com/rss",
-          "description": ""
-        },
-        {
-          "title": "Colossal",
-          "htmlUrl": "https://www.thisiscolossal.com/",
-          "xmlUrl": "https://www.thisiscolossal.com/feed/",
-          "description": ""
-        },
-        {
-          "title": "Daring Fireball",
-          "htmlUrl": "https://daringfireball.net/",
-          "xmlUrl": "https://daringfireball.net/feeds/json",
-          "description": ""
-        },
-        {
-          "title": "Ed Zitron",
-          "htmlUrl": "https://www.wheresyoured.at/",
-          "xmlUrl": "https://www.wheresyoured.at/rss/",
-          "description": ""
-        },
-        {
-          "title": "Jason Griffey",
-          "htmlUrl": "https://jasongriffey.net/",
-          "xmlUrl": "http://www.jasongriffey.net/wp/feed/atom/",
-          "description": ""
-        },
-        {
-          "title": "Justinsomnia",
-          "htmlUrl": "https://justinsomnia.org/",
-          "xmlUrl": "http://justinsomnia.org/feed/atom/",
-          "description": ""
-        },
-        {
-          "title": "jwz",
-          "htmlUrl": "https://www.jwz.org/blog/",
-          "xmlUrl": "http://www.jwz.org/blog/feed/",
-          "description": ""
-        },
-        {
-          "title": "Khoi Vinh",
-          "htmlUrl": "https://www.subtraction.com/",
-          "xmlUrl": "http://feeds.feedburner.com/subtraction",
-          "description": ""
-        },
-        {
-          "title": "kottke.org",
-          "htmlUrl": "https://kottke.org/",
-          "xmlUrl": "http://feeds.kottke.org/json",
-          "description": ""
-        },
-        {
-          "title": "Michael Sippey",
-          "htmlUrl": "https://sippey.com/",
-          "xmlUrl": "http://feeds.feedburner.com/sippey",
-          "description": ""
-        },
-        {
-          "title": "NetNewsWireNews",
-          "htmlUrl": "https://netnewswire.blog/",
-          "xmlUrl": "https://netnewswire.blog/feed.json",
-          "description": ""
-        },
-        {
-          "title": "Simon Willison",
-          "htmlUrl": "http://simonwillison.net/",
-          "xmlUrl": "https://simonwillison.net/atom/everything/",
-          "description": ""
-        },
-        {
-          "title": "Spyglass",
-          "htmlUrl": "https://spyglass.org/",
-          "xmlUrl": "https://spyglass.org/rss/",
-          "description": ""
-        },
-        {
-          "title": "Spyglass Spiral",
-          "htmlUrl": "https://spiral.spyglass.org/",
-          "xmlUrl": "https://dispatch.spyglass.org/feed",
-          "description": ""
-        },
-        {
-          "title": "Waxy.org",
-          "htmlUrl": "https://waxy.org/",
-          "xmlUrl": "http://waxy.org/index.xml",
-          "description": ""
-        },
-        {
-          "title": "xkcd.com",
-          "htmlUrl": "https://xkcd.com/",
-          "xmlUrl": "http://xkcd.com/rss.xml",
-          "description": ""
-        }
-      ]
+      "title": "Allen Pike",
+      "htmlUrl": "",
+      "xmlUrl": "https://feeds.allenpike.com/feed/",
+      "description": ""
     },
     {
-      "name": "Sometimes",
-      "feeds": [
-        {
-          "title": "Allen Pike",
-          "htmlUrl": "",
-          "xmlUrl": "https://feeds.allenpike.com/feed/",
-          "description": ""
-        },
-        {
-          "title": "Citation Needed",
-          "htmlUrl": "https://www.citationneeded.news/",
-          "xmlUrl": "https://www.citationneeded.news/rss/",
-          "description": ""
-        },
-        {
-          "title": "furbo.org",
-          "htmlUrl": "https://furbo.org/",
-          "xmlUrl": "https://furbo.org/feed/json",
-          "description": ""
-        },
-        {
-          "title": "inessential",
-          "htmlUrl": "https://inessential.com/",
-          "xmlUrl": "https://inessential.com/feed.json",
-          "description": ""
-        },
-        {
-          "title": "Inside the News in Colorado",
-          "htmlUrl": "https://coloradomedia.substack.com/",
-          "xmlUrl": "https://coloradomedia.substack.com/feed",
-          "description": ""
-        },
-        {
-          "title": "Management for Anarchists",
-          "htmlUrl": "https://raf.eco/",
-          "xmlUrl": "https://raf.eco/rss/",
-          "description": ""
-        },
-        {
-          "title": "Six Colors",
-          "htmlUrl": "https://sixcolors.com/",
-          "xmlUrl": "https://feedpress.me/sixcolors?type=xml",
-          "description": ""
-        },
-        {
-          "title": "The Beautiful Mess",
-          "htmlUrl": "https://cutlefish.substack.com/",
-          "xmlUrl": "https://cutlefish.substack.com/feed",
-          "description": ""
-        },
-        {
-          "title": "The Looking Glass",
-          "htmlUrl": "https://lg.substack.com/",
-          "xmlUrl": "https://lg.substack.com/feed",
-          "description": ""
-        },
-        {
-          "title": "UX Collective",
-          "htmlUrl": "https://newsletter.uxdesign.cc/",
-          "xmlUrl": "https://newsletter.uxdesign.cc/feed",
-          "description": ""
-        }
-      ]
+      "title": "Bobulate",
+      "htmlUrl": "https://bobulate.com/",
+      "xmlUrl": "http://bobulate.com/rss",
+      "description": ""
+    },
+    {
+      "title": "Citation Needed",
+      "htmlUrl": "https://www.citationneeded.news/",
+      "xmlUrl": "https://www.citationneeded.news/rss/",
+      "description": ""
+    },
+    {
+      "title": "Colossal",
+      "htmlUrl": "https://www.thisiscolossal.com/",
+      "xmlUrl": "https://www.thisiscolossal.com/feed/",
+      "description": ""
+    },
+    {
+      "title": "Daring Fireball",
+      "htmlUrl": "https://daringfireball.net/",
+      "xmlUrl": "https://daringfireball.net/feeds/json",
+      "description": ""
+    },
+    {
+      "title": "Ed Zitron",
+      "htmlUrl": "https://www.wheresyoured.at/",
+      "xmlUrl": "https://www.wheresyoured.at/rss/",
+      "description": ""
+    },
+    {
+      "title": "furbo.org",
+      "htmlUrl": "https://furbo.org/",
+      "xmlUrl": "https://furbo.org/feed/json",
+      "description": ""
+    },
+    {
+      "title": "inessential",
+      "htmlUrl": "https://inessential.com/",
+      "xmlUrl": "https://inessential.com/feed.json",
+      "description": ""
+    },
+    {
+      "title": "Inside the News in Colorado",
+      "htmlUrl": "https://coloradomedia.substack.com/",
+      "xmlUrl": "https://coloradomedia.substack.com/feed",
+      "description": ""
+    },
+    {
+      "title": "Jason Griffey",
+      "htmlUrl": "https://jasongriffey.net/",
+      "xmlUrl": "http://www.jasongriffey.net/wp/feed/atom/",
+      "description": ""
+    },
+    {
+      "title": "Justinsomnia",
+      "htmlUrl": "https://justinsomnia.org/",
+      "xmlUrl": "http://justinsomnia.org/feed/atom/",
+      "description": ""
+    },
+    {
+      "title": "jwz",
+      "htmlUrl": "https://www.jwz.org/blog/",
+      "xmlUrl": "http://www.jwz.org/blog/feed/",
+      "description": ""
+    },
+    {
+      "title": "Khoi Vinh",
+      "htmlUrl": "https://www.subtraction.com/",
+      "xmlUrl": "http://feeds.feedburner.com/subtraction",
+      "description": ""
+    },
+    {
+      "title": "kottke.org",
+      "htmlUrl": "https://kottke.org/",
+      "xmlUrl": "http://feeds.kottke.org/json",
+      "description": ""
+    },
+    {
+      "title": "Management for Anarchists",
+      "htmlUrl": "https://raf.eco/",
+      "xmlUrl": "https://raf.eco/rss/",
+      "description": ""
+    },
+    {
+      "title": "Michael Sippey",
+      "htmlUrl": "https://sippey.com/",
+      "xmlUrl": "http://feeds.feedburner.com/sippey",
+      "description": ""
+    },
+    {
+      "title": "NetNewsWireNews",
+      "htmlUrl": "https://netnewswire.blog/",
+      "xmlUrl": "https://netnewswire.blog/feed.json",
+      "description": ""
+    },
+    {
+      "title": "Simon Willison",
+      "htmlUrl": "http://simonwillison.net/",
+      "xmlUrl": "https://simonwillison.net/atom/everything/",
+      "description": ""
+    },
+    {
+      "title": "Six Colors",
+      "htmlUrl": "https://sixcolors.com/",
+      "xmlUrl": "https://feedpress.me/sixcolors?type=xml",
+      "description": ""
+    },
+    {
+      "title": "Spyglass",
+      "htmlUrl": "https://spyglass.org/",
+      "xmlUrl": "https://spyglass.org/rss/",
+      "description": ""
+    },
+    {
+      "title": "Spyglass Spiral",
+      "htmlUrl": "https://spiral.spyglass.org/",
+      "xmlUrl": "https://dispatch.spyglass.org/feed",
+      "description": ""
+    },
+    {
+      "title": "The Beautiful Mess",
+      "htmlUrl": "https://cutlefish.substack.com/",
+      "xmlUrl": "https://cutlefish.substack.com/feed",
+      "description": ""
+    },
+    {
+      "title": "The Looking Glass",
+      "htmlUrl": "https://lg.substack.com/",
+      "xmlUrl": "https://lg.substack.com/feed",
+      "description": ""
+    },
+    {
+      "title": "UX Collective",
+      "htmlUrl": "https://newsletter.uxdesign.cc/",
+      "xmlUrl": "https://newsletter.uxdesign.cc/feed",
+      "description": ""
+    },
+    {
+      "title": "Waxy.org",
+      "htmlUrl": "https://waxy.org/",
+      "xmlUrl": "http://waxy.org/index.xml",
+      "description": ""
+    },
+    {
+      "title": "xkcd.com",
+      "htmlUrl": "https://xkcd.com/",
+      "xmlUrl": "http://xkcd.com/rss.xml",
+      "description": ""
     }
   ]
 }
