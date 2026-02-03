@@ -2,7 +2,7 @@
   "feeds": [
     {
       "title": "Allen Pike",
-      "htmlUrl": "",
+      "htmlUrl": "https://www.allenpike.com/",
       "xmlUrl": "https://feeds.allenpike.com/feed/",
       "description": ""
     },
@@ -37,6 +37,12 @@
       "description": ""
     },
     {
+      "title": "From Afar",
+      "htmlUrl": "https://afar.spyglass.org/",
+      "xmlUrl": "https://dispatch.spyglass.org/feed",
+      "description": ""
+    },
+    {
       "title": "furbo.org",
       "htmlUrl": "https://furbo.org/",
       "xmlUrl": "https://furbo.org/feed/json",
@@ -52,6 +58,12 @@
       "title": "Inside the News in Colorado",
       "htmlUrl": "https://coloradomedia.substack.com/",
       "xmlUrl": "https://coloradomedia.substack.com/feed",
+      "description": ""
+    },
+    {
+      "title": "Interconnected",
+      "htmlUrl": "https://interconnected.org/home",
+      "xmlUrl": "https://interconnected.org/home/feed",
       "description": ""
     },
     {
@@ -103,6 +115,12 @@
       "description": ""
     },
     {
+      "title": "Robin Sloan",
+      "htmlUrl": "https://www.robinsloan.com/lab/",
+      "xmlUrl": "https://www.robinsloan.com/lab.xml",
+      "description": ""
+    },
+    {
       "title": "Simon Willison",
       "htmlUrl": "http://simonwillison.net/",
       "xmlUrl": "https://simonwillison.net/atom/everything/",
@@ -121,12 +139,6 @@
       "description": ""
     },
     {
-      "title": "Spyglass Spiral",
-      "htmlUrl": "https://spiral.spyglass.org/",
-      "xmlUrl": "https://dispatch.spyglass.org/feed",
-      "description": ""
-    },
-    {
       "title": "The Beautiful Mess",
       "htmlUrl": "https://cutlefish.substack.com/",
       "xmlUrl": "https://cutlefish.substack.com/feed",
@@ -136,6 +148,12 @@
       "title": "The Looking Glass",
       "htmlUrl": "https://lg.substack.com/",
       "xmlUrl": "https://lg.substack.com/feed",
+      "description": ""
+    },
+    {
+      "title": "The Radavist",
+      "htmlUrl": "https://theradavist.com/",
+      "xmlUrl": "https://cms.theradavist.com/feed",
       "description": ""
     },
     {
