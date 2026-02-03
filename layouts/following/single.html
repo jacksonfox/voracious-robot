@@ -4,19 +4,16 @@
 
 <div class="following-list">
 {{ with .Site.Data.following }}
-  {{ range .categories }}
-    <h2>{{ .name }}</h2>
-    <ul>
-      {{ range .feeds }}
-        <li>
-          <a href="{{ .htmlUrl }}" title="{{ .description }}">{{ .title }}</a>
-          {{ if .xmlUrl }}
-            <small>(<a href="{{ .xmlUrl }}">feed</a>)</small>
-          {{ end }}
-        </li>
-      {{ end }}
-    </ul>
-  {{ end }}
+  <ul>
+    {{ range .feeds }}
+      <li>
+        <a href="{{ .htmlUrl }}" title="{{ .description }}">{{ .title }}</a>
+        {{ if .xmlUrl }}
+          <small>(<a href="{{ .xmlUrl }}">feed</a>)</small>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
 {{ end }}
 </div>
 {{ end }}

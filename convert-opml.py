@@ -10,29 +10,24 @@ import sys
 from pathlib import Path
 
 def parse_opml(opml_file):
-    """Parse OPML file and convert to structured JSON"""
+    """Parse OPML file and convert to a flat alphabetical list of feeds"""
     tree = ET.parse(opml_file)
     root = tree.getroot()
-    
-    categories = []
-    
+
+    feeds = []
+
     # Find body element
     body = root.find('body')
     if body is None:
         print("Error: No body element found in OPML")
         return None
-    
-    # Process each outline (category or feed)
+
+    # Process each outline, collecting all feeds regardless of category
     for outline in body.findall('outline'):
-        text = outline.get('text', '')
-        title = outline.get('title', text)
-        
-        # Check if this outline has children (category) or is a feed
         children = outline.findall('outline')
-        
+
         if children:
-            # This is a category
-            feeds = []
+            # This is a category - collect its child feeds
             for child in children:
                 feed = {
                     'title': child.get('title', child.get('text', '')),
@@ -41,29 +36,22 @@ def parse_opml(opml_file):
                     'description': child.get('description', '')
                 }
                 feeds.append(feed)
-            
-            category = {
-                'name': title,
-                'feeds': feeds
-            }
-            categories.append(category)
         else:
-            # This is a standalone feed (no category)
+            # This is a standalone feed
+            text = outline.get('text', '')
+            title = outline.get('title', text)
             feed = {
                 'title': title,
                 'htmlUrl': outline.get('htmlUrl', ''),
                 'xmlUrl': outline.get('xmlUrl', ''),
                 'description': outline.get('description', '')
             }
-            
-            # Add to "Uncategorized" category
-            uncategorized = next((cat for cat in categories if cat['name'] == 'Uncategorized'), None)
-            if not uncategorized:
-                uncategorized = {'name': 'Uncategorized', 'feeds': []}
-                categories.append(uncategorized)
-            uncategorized['feeds'].append(feed)
-    
-    return {'categories': categories}
+            feeds.append(feed)
+
+    # Sort feeds alphabetically by title (case-insensitive)
+    feeds.sort(key=lambda f: f['title'].lower())
+
+    return {'feeds': feeds}
 
 def main():
     if len(sys.argv) != 3:
@@ -86,7 +74,7 @@ def main():
             json.dump(data, f, indent=2, ensure_ascii=False)
         
         print(f"Successfully converted {input_file} to {output_file}")
-        print(f"Found {len(data['categories'])} categories with {sum(len(cat['feeds']) for cat in data['categories'])} feeds total")
+        print(f"Found {len(data['feeds'])} feeds")
         
     except ET.ParseError as e:
         print(f"Error parsing OPML file: {e}")

@@ -36,7 +36,7 @@ This is a personal links blog built with Hugo, featuring a custom minimal design
 
 ## Common Tasks
 - New post: `./new-post.sh <URL> [title]` or `./hugo new content posts/filename.md`
-- Update following list: `./update-following.sh` (after placing OPML export as `following.opml`)
+- Update following list: `./update-following.sh` (after placing OPML export as `following.opml`) - generates a flat alphabetical list of feeds (no categories)
 - Build: `./hugo --quiet` 
 - Serve locally: `./hugo server` (uses localhost:1313)
 - Build for production: `./hugo --environment production`
