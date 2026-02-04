@@ -5,6 +5,6 @@ draft: false
 tags:
   - advice
 ---
-![do-it-scared.jpg](/do-it-scared.jpg)
+![Flow chart that says you should do things even when you're scared](/do-it-scared.jpg)
 
 from [Janis Ozolins](https://www.linkedin.com/posts/ozolinsjanis_2-options-activity-6943514091344818176-Uz9F?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABSHRgBcIsFPEXA-RJZJA7r_UAQrsCW3wY)
