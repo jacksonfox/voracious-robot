@@ -2,7 +2,7 @@
 title: "Hi! Viz Keycaps"
 date: 2026-02-26
 lastmod: 2026-02-26
-draft: true
+draft: false
 tags:
   - keyboards
 ---
