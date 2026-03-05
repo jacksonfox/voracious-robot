@@ -3,7 +3,7 @@
 
 set -e
 
-OPML_FILE="following.opml"
+OPML_FILE="${1:-following.opml}"
 JSON_OUTPUT="data/following.json"
 
 # Check if OPML file exists
