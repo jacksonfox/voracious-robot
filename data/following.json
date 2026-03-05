@@ -1,6 +1,12 @@
 {
   "feeds": [
     {
+      "title": "Afterthoughts...",
+      "htmlUrl": "https://thoughts.spyglass.org/",
+      "xmlUrl": "https://dispatch.spyglass.org/feed",
+      "description": ""
+    },
+    {
       "title": "Allen Pike",
       "htmlUrl": "https://www.allenpike.com/",
       "xmlUrl": "https://feeds.allenpike.com/feed/",
@@ -28,18 +34,6 @@
       "title": "Daring Fireball",
       "htmlUrl": "https://daringfireball.net/",
       "xmlUrl": "https://daringfireball.net/feeds/json",
-      "description": ""
-    },
-    {
-      "title": "Ed Zitron",
-      "htmlUrl": "https://www.wheresyoured.at/",
-      "xmlUrl": "https://www.wheresyoured.at/rss/",
-      "description": ""
-    },
-    {
-      "title": "From Afar",
-      "htmlUrl": "https://afar.spyglass.org/",
-      "xmlUrl": "https://dispatch.spyglass.org/feed",
       "description": ""
     },
     {
@@ -115,6 +109,12 @@
       "description": ""
     },
     {
+      "title": "rafe.codes",
+      "htmlUrl": "http:///",
+      "xmlUrl": "https://rafe.codes/index.xml",
+      "description": ""
+    },
+    {
       "title": "Robin Sloan",
       "htmlUrl": "https://www.robinsloan.com/lab/",
       "xmlUrl": "https://www.robinsloan.com/lab.xml",
@@ -157,9 +157,27 @@
       "description": ""
     },
     {
+      "title": "Unsung",
+      "htmlUrl": "https://unsung.aresluna.org/",
+      "xmlUrl": "https://unsung.aresluna.org/feed.xml",
+      "description": ""
+    },
+    {
+      "title": "Upstanding Robot",
+      "htmlUrl": "https://upstandingrobot.com/",
+      "xmlUrl": "https://upstandingrobot.com/index.xml",
+      "description": ""
+    },
+    {
       "title": "UX Collective",
       "htmlUrl": "https://newsletter.uxdesign.cc/",
       "xmlUrl": "https://newsletter.uxdesign.cc/feed",
+      "description": ""
+    },
+    {
+      "title": "Voracious Robot",
+      "htmlUrl": "https://voraciousrobot.com/",
+      "xmlUrl": "https://voraciousrobot.com/index.xml",
       "description": ""
     },
     {
