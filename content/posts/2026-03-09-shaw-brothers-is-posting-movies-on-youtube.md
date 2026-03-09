@@ -8,6 +8,4 @@ tags:
   - kung-fu
   - hong-kong
 ---
-[Shaw Brothers](https://www.youtube.com/@ShawBrosCinema), makers of classic Hong Kong movies, are posting full-length movies on Youtube
-
-![](https://www.youtube.com/watch?v=XS-bSadWHdA)
+[Shaw Brothers](https://www.youtube.com/@ShawBrosCinema), makers of classic Hong Kong movies, are posting [full-length movies](https://www.youtube.com/watch?v=XS-bSadWHdA) on Youtube
