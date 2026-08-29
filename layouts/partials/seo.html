@@ -1,0 +1,63 @@
+{{- $title := .Title -}}
+{{- if .IsHome -}}
+  {{- $title = .Site.Title -}}
+{{- else -}}
+  {{- $title = printf "%s - %s" .Title .Site.Title -}}
+{{- end -}}
+
+{{- $desc := .Description -}}
+{{- if not $desc -}}{{- $desc = .Summary -}}{{- end -}}
+{{- if not $desc -}}{{- $desc = .Site.Params.description -}}{{- end -}}
+{{- $desc = $desc | plainify -}}
+
+{{/* Falls back to a site-wide default when one is set. No defaultImage today —
+     add a ~1200x630 image to static/ and set params.defaultImage to use one. */}}
+{{- $image := .Params.image -}}
+{{- if not $image -}}{{- $image = .Site.Params.defaultImage -}}{{- end -}}
+{{- if $image -}}{{- $image = absURL $image -}}{{- end -}}
+
+{{- $published := .PublishDate -}}
+{{- if not $published -}}{{- $published = .Date -}}{{- end -}}
+{{- $modified := .Lastmod -}}
+{{- if not $modified -}}{{- $modified = $published -}}{{- end -}}
+
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+
+<link rel="canonical" href="{{ .Permalink }}">
+
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{- if $image }}
+<meta property="og:image" content="{{ $image }}">
+{{- end }}
+<meta property="og:site_name" content="{{ .Site.Title }}">
+
+<meta name="twitter:card" content="{{ if $image }}summary_large_image{{ else }}summary{{ end }}">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+{{- if $image }}
+<meta name="twitter:image" content="{{ $image }}">
+{{- end }}
+
+{{/* Build the object, then emit it once. Writing the JSON out field by field
+     double-encodes every value: jsonify quotes the string, then Go's escaper
+     quotes it again inside <script>, so names arrive as "\"Jackson Fox\"" and
+     the dates stop parsing. safeJS marks the already-valid JSON as safe. */}}
+{{- $ld := dict
+  "@context" "https://schema.org"
+  "@type" (cond .IsPage "BlogPosting" "Blog")
+  "headline" $title
+  "description" $desc
+  "url" .Permalink
+  "author" (dict "@type" "Person" "name" .Site.Params.author)
+  "datePublished" ($published | time.Format "2006-01-02T15:04:05Z07:00")
+  "dateModified" ($modified | time.Format "2006-01-02T15:04:05Z07:00")
+-}}
+{{- with $image }}{{ $ld = merge $ld (dict "image" .) }}{{ end -}}
+
+<script type="application/ld+json">
+{{ $ld | jsonify | safeJS }}
+</script>

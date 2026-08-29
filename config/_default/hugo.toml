@@ -9,7 +9,7 @@ buildExpired = false
 
 [params]
   description = "Curated technical and design links"
-  author = "Your Name"
+  author = "Jackson Fox"
 
 [permalinks]
   posts = "/:year/:month/:day/:slug/"
