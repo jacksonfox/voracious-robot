@@ -21,4 +21,4 @@ python3 convert-opml.py "$OPML_FILE" "$JSON_OUTPUT"
 rm "$OPML_FILE"
 echo "Removed temporary $OPML_FILE"
 
-echo "Following list updated! Run './hugo server' to preview changes."
+echo "Following list updated! Run 'hugo server' to preview changes."

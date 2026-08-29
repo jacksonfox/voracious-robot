@@ -18,4 +18,5 @@ Thumbs.db
 
 # Temporary files
 *.tmp
-*.logfollowing.opml
+*.log
+following.opml

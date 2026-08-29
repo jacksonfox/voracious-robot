@@ -76,7 +76,7 @@ echo "Next steps:"
 echo "1. Edit $POST_PATH"
 echo "2. Add your commentary and tags"
 echo "3. Add images to static/ and reference with /filename.jpg"
-echo "4. Run ./hugo server to preview"
+echo "4. Run hugo server to preview"
 echo ""
 # Only try to open editor if running interactively (not from Automator)
 if [ -t 0 ] && [ -t 1 ]; then
