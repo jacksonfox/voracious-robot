@@ -1,9 +1,7 @@
-# Hugo binary
-hugo
-
 # Generated files
 public/
 resources/
+.hugo_build.lock
 
 # OS files
 .DS_Store
@@ -20,3 +18,4 @@ Thumbs.db
 *.tmp
 *.log
 following.opml
+tmp/
