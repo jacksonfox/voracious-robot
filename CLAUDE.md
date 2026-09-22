@@ -1,55 +1,81 @@
-# Hugo Links Blog - Custom Minimal Design
+# Voracious Robot
 
-This is a personal links blog built with Hugo, featuring a custom minimal design inspired by jacksonfox.org.
+Personal links blog at voraciousrobot.com: short posts, usually about something found elsewhere, plus a reading list. Hugo with no theme and hand-written layouts, deployed on Netlify from `main`.
 
-## Key Technical Details
+Sister blog: Upstanding Robot (`~/Code/websites/upstanding-robot`). The two share most of their templates and conventions. Before changing anything both blogs have, read `~/Code/websites/blogs/docs/blog-conventions.md`.
 
-### Hugo Setup
-- Hugo built from source, binary located at `./hugo` 
-- No theme used - completely custom layouts in `layouts/_default/`
-- Run with: `./hugo server` or `./hugo` to build
+## Setup
 
-### Design Philosophy  
-- Minimal, text-focused aesthetic matching jacksonfox.org
-- Clean typography with intentional font choices
-- Accessibility-first (WCAG AA compliant links)
-- No external dependencies except Google Fonts
+- Hugo 0.159.1 from Homebrew, on PATH. There is no `./hugo` binary in this repo.
+- Preview: `hugo server`, then http://localhost:1313/
+- Build for deploy: `hugo --environment production`. Netlify runs `hugo --gc --minify --environment production`, pinned to 0.159.1 in `netlify.toml`.
+- Config is TOML: `config/_default/hugo.toml`, with `config/development/` and `config/production/` overriding `baseURL`.
+- Content frontmatter is YAML.
+- Most posting happens in the Blog Manager (`~/Code/apps/blogging-tool`), which edits this repo directly and writes `lastmod` on every save. Its field list for this blog mirrors the archetype here. Change one, change the other.
 
-### Typography
-- **Body text**: Menlo monospace for technical/code aesthetic
-- **Headers & site title**: Poppins (Google Fonts) for clean contrast
-- **Links**: #0066cc blue for accessibility compliance
+## Content
 
-### Content Structure
-- Posts are individual `.md` files in `content/posts/` (not directories)
-- Images stored in `static/` and referenced as `/filename.jpg`
-- Posts have optional titles - if no title, just show date/content/tags
-- Date-based permalinks: `/:year/:month/:day/:slug/`
-- Tags appear below post content with # prefix
-- Posts migrated from micro.blog format (originals in `to-migrate/`)
+One type, posts, in `content/posts/` at `/:year/:month/:day/:slug/`. The slug comes from the title, not the filename. Archetype: `archetypes/default.md`. The Blog Manager names files `YYYY-MM-DD-title-slug.md`; `new-post.sh <URL> [title]` writes `YYYY-MM-DD-slug.md`, or `YYYY-MM-DD-link.md` without a title.
 
-### Styling Choices
-- Blockquotes: Left blue border + light blue background, italic, smaller font
-- Centered layout (650px max width) with left-aligned text
-- Minimal navigation: "home", "about", "following", and "tags"
-- Clean, functional design - no visual clutter
+A post as the Blog Manager writes it:
 
-## Common Tasks
-- New post: `./new-post.sh <URL> [title]` or `./hugo new content posts/filename.md`
-- Update following list: `./update-following.sh` (after placing OPML export as `following.opml`) - generates a flat alphabetical list of feeds (no categories)
-- Build: `./hugo --quiet` 
-- Serve locally: `./hugo server` (uses localhost:1313)
-- Build for production: `./hugo --environment production`
-- Posts only need: date, tags, content (titles optional)
+```yaml
+---
+title: The quiet grief of adult friendship
+date: 2026-09-14
+lastmod: 2026-09-14
+draft: false
+tags:
+  - friendship
+link: "https://..."    # optional: the thing the post is about
+via: Kottke            # optional: where it was found
+---
+```
 
-## Configuration
-- Default baseURL: `http://localhost:1313/` for easy local testing
-- Production config in `config/production/hugo.toml` sets correct production URL
-- Use `--environment production` flag when building for deployment
+- The archetype is older than this. It has no `title` or `lastmod` and quotes the date. Reconciling it is on the workspace TODO.
+- `link` and `via` are stored but no template renders them. Post titles are not shown on the page either; they feed `<title>`, the SEO tags, and the URL slug.
+- Images go in `static/` and are referenced root-relative, `/photo.jpg`. There is no default social image yet.
+- The homepage lists posts newest first. The card markup is inline in `index.html` and `list.html`.
+- Pages: `/about/`, `/reading/` (rendered from `data/reading.json`), `/following/` (from `data/following.json`), `/tags/`.
+- Tags render below the body with a `#` prefix. Empty-string tags are skipped.
 
-## Design Preferences
-- Keep minimal aesthetic - avoid adding complexity
-- Maintain accessibility standards
-- Preserve clean typography hierarchy
-- Any changes should feel intentional and purposeful
-- Always update CLAUDE.md with relevant details when committing code to Github
+## Layouts
+
+All in `layouts/`, no theme. All CSS is inline in `_default/baseof.html`.
+
+- `_default/baseof.html`: shell, head, nav, all styling
+- `_default/index.html`: homepage
+- `_default/list.html`: section and tag lists
+- `_default/single.html`: single post
+- `_default/terms.html`: tag index
+- `reading/single.html`: reading list from `data/reading.json`
+- `about/single.html`, `following/single.html`
+- `partials/seo.html`: canonical, Open Graph, Twitter card, JSON-LD
+
+## Scripts
+
+- `./new-post.sh <URL> [title]`: new link post with hand-written frontmatter, opened in an editor when run interactively
+- `./add-book.sh "title by author" [date] [bookshop_url]`: prepends a book to `data/reading.json`, prompting for a Bookshop.org URL if none is given
+- `./update-following.sh`: rebuilds `data/following.json` from a `following.opml` export in the repo root, using `convert-opml.py`, then deletes the OPML
+- `/new-post` Claude slash command in `.claude/commands/` (local, not tracked): guided post creation
+
+## Design
+
+- Body text Menlo. Headings Poppins. Links `#0066cc`.
+- Site title in Knewave at 36px with a slow rainbow color cycle (`.rainbow-title`).
+- Mascot `static/voracious-robot.png` at 100px in the header.
+- One 650px centered column, left-aligned text.
+- Blockquotes: left blue border, light blue background, italic, smaller.
+- Figures and images in post bodies scale to the column.
+- Keep it minimal and accessible. Changes should feel intentional. Match the sister blog unless the difference is deliberate; the conventions doc lists which differences are.
+
+## Automation
+
+`.github/workflows/` runs Claude code review on pull requests and answers `@claude` mentions in issues and PR comments. Upstanding Robot has no workflows.
+
+## Working in this repo
+
+- `docs/TODO.md` is the task list for this repo. `docs/CHANGELOG.md` records changes, newest first. Update both when work lands.
+- Work that should also happen on Upstanding Robot goes in the workspace TODO at `~/Code/websites/blogs/docs/TODO.md`, not here.
+- Small, frequent commits to `main`. Netlify deploys on push.
+- Keep this file current when the setup or conventions change.
