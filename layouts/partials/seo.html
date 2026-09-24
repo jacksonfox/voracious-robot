@@ -10,8 +10,7 @@
 {{- if not $desc -}}{{- $desc = .Site.Params.description -}}{{- end -}}
 {{- $desc = $desc | plainify -}}
 
-{{/* Falls back to a site-wide default when one is set. No defaultImage today —
-     add a ~1200x630 image to static/ and set params.defaultImage to use one. */}}
+{{/* Falls back to params.defaultImage when the site sets one. */}}
 {{- $image := .Params.image -}}
 {{- if not $image -}}{{- $image = .Site.Params.defaultImage -}}{{- end -}}
 {{- if $image -}}{{- $image = absURL $image -}}{{- end -}}
