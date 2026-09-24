@@ -54,7 +54,7 @@ All in `layouts/`, no theme. All CSS is inline in `_default/baseof.html`.
 
 ## Scripts
 
-- `./new-post.sh <URL> [title]`: new link post with hand-written frontmatter, opened in an editor when run interactively
+- `./new-post.sh [title]`: new post with hand-written frontmatter, opened in an editor when run interactively; the link goes in the body
 - `./add-book.sh "title by author" [date] [bookshop_url]`: prepends a book to `data/reading.json`, prompting for a Bookshop.org URL if none is given
 - `./update-following.sh`: rebuilds `data/following.json` from a `following.opml` export in the repo root, using `convert-opml.py`, then deletes the OPML
 - `/new-post` Claude slash command in `.claude/commands/` (local, not tracked): guided post creation
