@@ -1,0 +1,5 @@
+{{- $via := .Params.via -}}
+{{- $url := .Params.via_url -}}
+{{- if or $via $url -}}
+<div class="post-via">via {{ if $url }}<a href="{{ $url }}">{{ if $via }}{{ $via }}{{ else }}{{ (urls.Parse $url).Host }}{{ end }}</a>{{ else }}{{ $via }}{{ end }}</div>
+{{- end -}}

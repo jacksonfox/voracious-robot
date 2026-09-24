@@ -7,7 +7,8 @@
     <div class="post-content">
         {{ .Content }}
     </div>
-    
+    {{ partial "via.html" . }}
+
     {{ if .Params.tags }}
     {{ $hasRealTags := false }}
     {{ range .Params.tags }}
