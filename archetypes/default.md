@@ -2,7 +2,6 @@
 date: '{{ .Date }}'
 draft: false
 tags: [""]
-link: ""
 via: ""
 via_url: ""
 ---
