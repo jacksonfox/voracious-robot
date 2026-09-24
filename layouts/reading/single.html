@@ -2,7 +2,7 @@
 <p>{{ .Content }}</p>
 
 <div class="reading-list">
-{{ $reading := .Site.Data.reading }}
+{{ $reading := hugo.Data.reading }}
 {{ if $reading.books }}
   <ul>
     {{ range $reading.books }}

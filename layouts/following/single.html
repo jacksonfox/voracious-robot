@@ -3,7 +3,7 @@
 <p>{{ .Content }}</p>
 
 <div class="following-list">
-{{ with .Site.Data.following }}
+{{ with hugo.Data.following }}
   <ul>
     {{ range .feeds }}
       <li>
