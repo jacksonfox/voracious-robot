@@ -1,32 +1,24 @@
 #!/bin/bash
 
-# new-post.sh - Easy posting script for Hugo links blog
-# Usage: ./new-post.sh <URL> [title]
+# new-post.sh - Easy posting script for Hugo blog
+# Usage: ./new-post.sh [title]
 
 set -e  # Exit on any error
 
-# Check if URL is provided
-if [ $# -lt 1 ]; then
-    echo "Usage: $0 <URL> [title]"
-    echo "Example: $0 https://example.com"
-    echo "Example: $0 https://example.com 'Cool Article About Design'"
+if [ $# -gt 1 ]; then
+    echo "Usage: $0 [title]"
+    echo "Example: $0"
+    echo "Example: $0 'Cool Article About Design'"
     exit 1
 fi
 
-URL="$1"
-TITLE="${2:-}"
+TITLE="${1:-}"
 
 # Change to script directory for Automator compatibility
 cd "$(dirname "$0")" || {
     echo "Error: Could not change to script directory"
     exit 1
 }
-
-# Validate URL format
-if ! echo "$URL" | grep -qE '^https?://'; then
-    echo "Error: Please provide a valid URL starting with http:// or https://"
-    exit 1
-fi
 
 # Generate filename with YYYY-MM-DD-slug format
 DATE_PREFIX=$(date +"%Y-%m-%d")
@@ -35,8 +27,8 @@ if [ -n "$TITLE" ]; then
     SLUG=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
     FILENAME="${DATE_PREFIX}-${SLUG}"
 else
-    # Use date + "link" as filename
-    FILENAME="${DATE_PREFIX}-link"
+    # Use date + "post" as filename
+    FILENAME="${DATE_PREFIX}-post"
 fi
 
 # Create the post file path
@@ -55,7 +47,6 @@ cat > "$POST_PATH" << EOF
 date: $(date -Iseconds)
 draft: false
 tags: [""]
-link: "$URL"
 EOF
 
 # Add title if provided
@@ -66,7 +57,7 @@ fi
 cat >> "$POST_PATH" << 'EOF'
 ---
 
-Brief commentary about the link.
+Commentary, with the link inline.
 
 EOF
 
