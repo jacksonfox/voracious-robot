@@ -29,13 +29,14 @@ tags:
   - friendship
 link: "https://..."    # optional: the thing the post is about
 via: Kottke            # optional: where it was found
+via_url: "https://..."  # optional: link for via
 ---
 ```
 
 - The archetype is older than this. It has no `title` or `lastmod` and quotes the date. Reconciling it is on the workspace TODO.
-- `link` and `via` are stored but no template renders them. Post titles are not shown on the page either; they feed `<title>`, the SEO tags, and the URL slug.
+- `link` is stored but no template renders it. `via` and `via_url` render as a "via Name" line after the body, with the name linked when `via_url` is set. Post titles are not shown on the page either; they feed `<title>`, the SEO tags, and the URL slug.
 - Images go in `static/` and are referenced root-relative, `/photo.jpg`. There is no default social image yet.
-- The homepage lists posts newest first. The card markup is inline in `index.html` and `list.html`.
+- The homepage lists posts newest first. The card markup lives in `layouts/partials/post-card.html`, shared by `index.html` and `list.html`.
 - Pages: `/about/`, `/reading/` (rendered from `data/reading.json`), `/following/` (from `data/following.json`), `/tags/`.
 - Tags render below the body with a `#` prefix. Empty-string tags are skipped.
 
