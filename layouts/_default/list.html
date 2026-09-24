@@ -4,28 +4,6 @@
 {{ end }}
 
 {{ range .Pages }}
-<article class="post">
-    <div class="post-date">
-        <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }}</a>
-    </div>
-    
-    <div class="post-content">
-        {{ .Content }}
-    </div>
-    
-    {{ if .Params.tags }}
-    {{ $hasRealTags := false }}
-    {{ range .Params.tags }}
-        {{ if ne . "" }}
-            {{ $hasRealTags = true }}
-        {{ end }}
-    {{ end }}
-    {{ if $hasRealTags }}
-    <div class="post-tags">
-        {{ range .Params.tags }}{{ if ne . "" }}#<a href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}">{{ . }}</a> {{ end }}{{ end }}
-    </div>
-    {{ end }}
-    {{ end }}
-</article>
+{{ partial "post-card.html" . }}
 {{ end }}
 {{ end }}
