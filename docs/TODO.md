@@ -28,3 +28,4 @@ Decided 2026-09-23 in the workspace: two flat fields, `via` (source name) and `v
 
 - [x] 2026-09-22: Rewrote `README.md` and `CLAUDE.md`, added `docs/`, matched `.gitignore` to Upstanding Robot's, removed the empty `.gitmodules` and the tracked `.hugo_build.lock`.
 - [x] 2026-09-22: Fixed the `/new-post` slash command. It searched for TOML tags in post folders that don't exist, so it never found any tags.
+- [x] 2026-09-23: Dropped the unrendered `link` field from the archetype, `new-post.sh`, and the six posts that set it. The Blog Manager's field list changed the same day.

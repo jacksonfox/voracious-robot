@@ -15,7 +15,7 @@ Sister blog: Upstanding Robot (`~/Code/websites/upstanding-robot`). The two shar
 
 ## Content
 
-One type, posts, in `content/posts/` at `/:year/:month/:day/:slug/`. The slug comes from the title, not the filename. Archetype: `archetypes/default.md`. The Blog Manager names files `YYYY-MM-DD-title-slug.md`; `new-post.sh <URL> [title]` writes `YYYY-MM-DD-slug.md`, or `YYYY-MM-DD-link.md` without a title.
+One type, posts, in `content/posts/` at `/:year/:month/:day/:slug/`. The slug comes from the title, not the filename. Archetype: `archetypes/default.md`. The Blog Manager names files `YYYY-MM-DD-title-slug.md`; `new-post.sh [title]` writes `YYYY-MM-DD-slug.md`, or `YYYY-MM-DD-post.md` without a title.
 
 A post as the Blog Manager writes it:
 
@@ -27,14 +27,13 @@ lastmod: 2026-09-14
 draft: false
 tags:
   - friendship
-link: "https://..."    # optional: the thing the post is about
 via: Kottke            # optional: where it was found
 via_url: "https://..."  # optional: link for via
 ---
 ```
 
 - The archetype is older than this. It has no `title` or `lastmod` and quotes the date. Reconciling it is on the workspace TODO.
-- `link` is stored but no template renders it. `via` and `via_url` render as a "via Name" line after the body, with the name linked when `via_url` is set. Post titles are not shown on the page either; they feed `<title>`, the SEO tags, and the URL slug.
+- `via` and `via_url` render as a "via Name" line after the body, with the name linked when `via_url` is set. Post titles are not shown on the page either; they feed `<title>`, the SEO tags, and the URL slug.
 - Images go in `static/` and are referenced root-relative, `/photo.jpg`. There is no default social image yet.
 - The homepage lists posts newest first. The card markup lives in `layouts/partials/post-card.html`, shared by `index.html` and `list.html`.
 - Pages: `/about/`, `/reading/` (rendered from `data/reading.json`), `/following/` (from `data/following.json`), `/tags/`.

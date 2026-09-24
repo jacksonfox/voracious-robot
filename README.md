@@ -13,7 +13,7 @@ hugo --environment production     # build to public/ with the live baseURL
 
 ## Write
 
-- `./new-post.sh <URL> [title]`: a new link post
+- `./new-post.sh [title]`: a new post; the link goes in the body
 - `./add-book.sh "title by author"`: add a book to the reading list
 - `./update-following.sh`: refresh the following page from a `following.opml` export
 - Or use the Blog Manager app, which edits this repo directly
