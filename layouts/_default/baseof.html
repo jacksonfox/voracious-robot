@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ partial "seo.html" . }}
+    {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Knewave&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    {{ with .OutputFormats.Get "RSS" }}
-    <link rel="alternate" type="{{ .MediaType }}" href="{{ .Permalink }}" title="{{ site.Title }}">
-    {{ end }}
     <style>
         body {
             font-family: Menlo, Monaco, "Courier New", monospace;
