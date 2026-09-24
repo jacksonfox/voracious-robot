@@ -4,6 +4,11 @@ Changes to this repo, newest first. Cross-blog changes are also noted in the blo
 
 ## 2026-09-23
 
+- Feed link tags in `baseof.html` now come from `.AlternativeOutputFormats`, like Upstanding Robot's, instead of a hand-written RSS-only tag.
+- `partials/seo.html` and `_default/terms.html` are now identical to Upstanding Robot's.
+- Replaced the deprecated `.Site.Data` with `hugo.Data` in `following/single.html` and `reading/single.html`.
+- Reconciled the archetype: added `title` and `lastmod`, unquoted the date, dropped the stale placeholder body.
+- Titled the Lisa Congdon post; its URL moved to `/2025/08/13/lisa-congdon/`, with the old slug-less address redirecting via an alias.
 - Dropped the `link` field. It rendered nowhere; five of the six posts that set it already linked the same URL in the body, and Lisa Congdon now does. Removed from the six posts, the archetype, and `new-post.sh`, which now takes only an optional title.
 - Moved the post card markup out of `index.html` and `list.html` and into `layouts/partials/post-card.html`, shared by both. Output is unchanged.
 - Added `via` and `via_url` to the archetype and to `CLAUDE.md`'s frontmatter example. Both render as a "via Name" line after the body, through a new `layouts/partials/via.html`: the name links when `via_url` is set, and the URL's host shows when there's no name.
