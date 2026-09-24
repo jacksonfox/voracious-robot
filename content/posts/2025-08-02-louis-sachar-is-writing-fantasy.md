@@ -1,8 +1,8 @@
 ---
 date: 2025-08-02T21:01:47-06:00
+lastmod: 2026-09-23
 draft: false
 tags: ["books"]
-link: "https://bookshop.org/p/books/the-magician-of-tiger-castle-louis-sachar/21982708"
 title: "Louis Sachar is writing fantasy"
 ---
 

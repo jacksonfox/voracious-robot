@@ -1,8 +1,8 @@
 ---
 date: 2025-08-02T21:15:46-06:00
+lastmod: 2026-09-23
 draft: false
 tags: ["k-pop", "music", "movies"]
-link: "https://x.com/HollowAura/status/1948082236391333899"
 title: "K/DA paved the way for HUNTR/X"
 ---
 

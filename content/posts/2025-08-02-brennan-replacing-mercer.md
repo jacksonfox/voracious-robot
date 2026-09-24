@@ -1,8 +1,8 @@
 ---
 date: 2025-08-02T22:40:15-06:00
+lastmod: 2026-09-23
 draft: false
 tags: ["critical-role", "dungeons-and-dragons", "rpg"]
-link: "https://www.rollingstone.com/culture/rs-gaming/critical-role-reveals-campaign-game-master-brennan-lee-mulligan-1235398003/"
 title: "Brennan replacing Mercer"
 ---
 
