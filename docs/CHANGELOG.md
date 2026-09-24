@@ -13,6 +13,7 @@ Changes to this repo, newest first. Cross-blog changes are also noted in the blo
 - Moved the post card markup out of `index.html` and `list.html` and into `layouts/partials/post-card.html`, shared by both. Output is unchanged.
 - Added `via` and `via_url` to the archetype and to `CLAUDE.md`'s frontmatter example. Both render as a "via Name" line after the body, through a new `layouts/partials/via.html`: the name links when `via_url` is set, and the URL's host shows when there's no name.
 - Moved every body-text attribution into `via` and `via_url`: nine posts through the Blog Manager's `migrate-via` script, three by hand (Retro PIs, Lisa Congdon, and Undertale and Deltarune, the last as `via: our dev intern` with no URL), and added the Kottke URL to The quiet grief of adult friendship. Fixed the `Collosal` typo on Felt Nudibranchs. Thirteen posts now show a via line and no body text says "via [" any more.
+- The tags page prints tag names as written (`#ai`, `#raspberry pi`) instead of Hugo's capitalised term titles (`#Ai`, `#Raspberry Pi`), matching the chips under each post. Same template on both blogs.
 
 ## 2026-09-22
 
